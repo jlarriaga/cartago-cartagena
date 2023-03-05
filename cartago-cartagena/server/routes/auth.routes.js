@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { signupCtrl, loginCtrl, verifyCtrl } = require("../controllers/auth.controller")
+const { signupCtrl, loginCtrl, verifyCtrl} = require("../controllers/auth.controller")
 const {isAuthenticated} = require("../middleware/jwt.middleware")
 
 // ℹ️ Handles password encryption
