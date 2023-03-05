@@ -28,13 +28,15 @@ const propertySchema = new Schema(
         required: true,
     },
     chekinTime:{
-        type:String
+        type:String,
+        required:true
     },
-    checkOuutTime:{
-        type:String
+    checkOutTime:{
+        type:String,
+        required:true
     },
     availableDates:{
-        type:[Date],
+        type:[String],
         required: true,
     },
     amenities:{
