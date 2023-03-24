@@ -4,20 +4,16 @@ const { Schema, model } = require("mongoose");
 const tripSchema = new Schema(
   {
     checkInDate: {
-      type: String,
-      required: [true, "Full name is required."],
-      trim: true,
+      type: Date,
+      required: [true, "Check-in date is required."],
     },
     checkOutDate: {
-      type: String,
-      required: [true, "Email is required."],
-      unique: true,
-      lowercase: true,
-      trim: true,
+      type: Date,
+      required: [true, "Check-out date is required."],
     },
     numOfTravelers: {
-      type: String,
-      required: [true, "Password is required."],
+      type: Number,
+      required: [true, "Number of travelers is required."],
     },
     _properties: {
       type: [{ 

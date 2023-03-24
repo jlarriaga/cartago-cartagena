@@ -11,13 +11,11 @@ const customerSchema = new Schema(
     email: {
       type: String,
       required: [true, "Email is required."],
-      unique: true,
       lowercase: true,
       trim: true,
     },
     phoneNumber: {
       type: String,
-      required: [true, "Password is required."],
     } 
   },
   {
