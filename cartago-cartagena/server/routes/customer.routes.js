@@ -4,9 +4,9 @@ const { createCustomerCtrl, deleteCustomerCtrl, editCustomerCtrl } = require("..
 
 const {isAuthenticated} = require("../middleware/jwt.middleware")
 
-router.post("/create", createCustomerCtrl)
-router.delete("/:id/delete",deleteCustomerCtrl)
-router.patch("/:id/edit",editCustomerCtrl)
+router.post("/create",isAuthenticated, createCustomerCtrl)
+router.delete("/:id/delete",isAuthenticated, deleteCustomerCtrl)
+router.patch("/:id/edit",isAuthenticated, editCustomerCtrl)
 
 
 module.exports = router;

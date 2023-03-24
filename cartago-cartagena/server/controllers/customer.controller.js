@@ -4,7 +4,11 @@ const Customer = require("../models/Customer.model");
 exports.createCustomerCtrl = async (req, res, next) => {
   try {
     const { fullName, email, phoneNumber } = req.body;
-    const customerCreated = await Customer.create({ fullName, email, phoneNumber });
+    const customerCreated = await Customer.create({
+      fullName,
+      email,
+      phoneNumber,
+    });
     res.status(201).json({
       message: "Customer created successfully",
       customer: customerCreated,
@@ -61,5 +65,14 @@ exports.editCustomerCtrl = async (req, res, next) => {
   } catch (error) {
     // Respond with an error message
     res.status(500).json({ message: "Error updating customer" });
+  }
+};
+exports.getCustomerIdCtrl = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const foundCustomer = await Customer.findById(id);
+    res.json({ message: "Customer found by id successfully", foundCustomer });
+  } catch (error) {
+    res.status(404).json({ message: "Customer not found" });
   }
 };

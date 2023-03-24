@@ -36,7 +36,7 @@ const propertySchema = new Schema(
         required:true
     },
     availableDates:{
-        type:[String],
+        type:[Date],
         required: true,
     },
     amenities:{
@@ -46,6 +46,10 @@ const propertySchema = new Schema(
     terms:{
         type:String
     },
+    images:{
+        type:[String],
+        required:true
+    }
 
   },
 
