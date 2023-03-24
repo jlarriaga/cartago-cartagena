@@ -28,12 +28,10 @@ const propertySchema = new Schema(
         required: true,
     },
     chekinTime:{
-        type:String,
-        required:true
+        type:String
     },
-    checkOutTime:{
-        type:String,
-        required:true
+    checkOuutTime:{
+        type:String
     },
     availableDates:{
         type:[Date],
@@ -46,10 +44,6 @@ const propertySchema = new Schema(
     terms:{
         type:String
     },
-    images:{
-        type:[String],
-        required:true
-    }
 
   },
 
